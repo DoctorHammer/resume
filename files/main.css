@@ -23,6 +23,38 @@ body, html {
 
 <!-- /* Header */ -->
 
+.topnamediv { 100%;
+  width: 100%;
+      border-collapse: collapse;
+      border: 0px solid black;
+      padding-top: 0px;
+      padding-bottom: 0px;
+      line-height: 0px;
+      background-color: #d4f0ff;
+      break-inside: avoid;
+      text-align: center;
+
+}
+
+.topnameinput { 100%;
+  width: 100%;
+      border-collapse: collapse;
+      border: 0px solid black;
+      padding-top: 0px;
+      padding-bottom: 0px;
+      line-height: 0px;
+      background-color: #d4f0ff;
+      break-inside: avoid;
+      text-align: center;
+      font-family: vitesse;
+      font-style: normal;
+      font-weight: 800;
+      font-size: 28pt;
+        color: #1e5ce9;
+        line-height: 0;
+}
+
+
 .toptable {
 width: 100%;
     border-collapse: collapse;
