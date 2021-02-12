@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta name="robots" content="noindex">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>EOT Recap</title>
+    <meta name="EOT Recap" content="EOT Recap" >
+    <link rel="icon" href="files/favicon.png">
+
+    <link rel="stylesheet" href="files/main.css">
+    <link rel="stylesheet" href="files/fonts.css">
+    <link rel="stylesheet" href="files/print.css" type="text/css" media="print" />
+    <script src="files/jquery.min.js"> </script>
+    <script src="files/jquery.repeatable.js"> </script>
+
+    <script type="text/javascript">
+      // Warn when user tries to reload/ leave page
+         var popit = true;
+         window.onbeforeunload = function() {
+              if(popit == true) {
+                   popit = false;
+                   return "Reload site? Changes you made may not be saved.";
+              }
+         }
+    </script>
+
+
+
+</head>
+
+<body>
+
+
+    <!--Top Table begins here -->
+<div id="toptable" class="toptable">
+
+                <input class="nypdtext" style="text-align: center;">
+</div>
+    <!-- Top Table ends here -->
+
+    <!-- Author info begins here -->
+    <table id="authorinfo" class="authortable">
+        <tr>
+
+            <td id="AuthorDateCol" class="AuthorDateCol">
+                <label for="date_picker" class="label-text">Date:</label>
+                <input type="text" id="date-picker" class="date-picker" name="date-picker" min="2018-01-01" max="2218-01-01">
+            </td>
+
+                <script>
+                // Get today's date
+                var today = new Date();
+
+                var date =
+                (today.getMonth()+1)
+                +'-'
+                +today.getDate()
+                +'-'
+                +today.getFullYear();
+
+                document.getElementById("date-picker").value = date;
+                </script>
+
+            <td id="AuthorPlatoonCol" class="AuthorPlatoonCol">
+                <label for="PlatoonPicker" class="label-text">Platoon:</label>
+                <select name="PlatoonPicker" id="PlatoonPicker" class="Platoon-picker">
+                    <option value="1st Platoon">1st Platoon</option>
+                    <option value="2nd Platoon">2nd Platoon</option>
+                    <option value="3rd Platoon">3rd Platoon</option>
+                </select>
+            </td>
+
+            <td id="AuthorSupervisorCol" class="AuthorSupervisorCol">
+                <label for="supervisor" class="label-text">LT/SGT:</label>
+                <input type="text" id="supervisor" class="supervisorform">
+            </td>
+        </tr>
+    </table>
+    <!-- Author info ends here -->
+
+
+
+
+
+
+<!-- Section -->
+    <!-- Index Crime Recap -->
+
+    <!-- Section Header -->
+
+      <table id="IndexCrimeReportTitle" class="titletable">
+          <tr>
+              <td colspan="6" class="NYPD">
+                  <p class="eotrecaptext">Index Crime Recap
+                  </p>
+              </td>
+          </tr>
+      </table>
+
+    <!-- Section Header -->
+
+    <!-- Index Crime Recap Permanent begins here -->
+    <table id="IndexCrimeRecap_Perma" class="indexcrimerecap_perma">
+        <tr>
+            <td class="tdleft" colspan="2">
+                <label for="CrimeCrimePicker" class="label-text">Crime Type:</label>
+                <select name="SelectCrime" id="CrimeCrimePicker" class="form-text">
+                    <option value="Select">Select</option>
+                    <option value="Murder">Murder</option>
+                    <option value="Rape">Rape</option>
+                    <option value="Robbery">Robbery</option>
+                    <option value="Felony Assault">Felony Assault</option>
+                    <option value="Burglary">Burglary</option>
+                    <option value="Grand Larceny">Grand Larceny</option>
+                    <option value="GLA">GLA</option>
+                </select>
+            </td>
+
+            <td class="tdleft" colspan="2">
+                <label for="occtime" class="label-text">Occurrence Time:</label>
+                <input id="occtime" type="time" class="form-text">
+            </td>
+
+            <td class="tdright" colspan="2">
+                <input id="Crimedvcheck" type="checkbox" class="form-text">
+                <label for="Crimedvcheck" class="label-text">Domestic</label>
+
+                <input id="Crimedvhischeck" type="checkbox" class="form-text">
+                <label for="Crimedvhischeck" class="label-text">DV History</label>
+            </td>
+        </tr>
+
+
+        <tr>
+
+            <td class="tdpaddingleft" colspan="3">
+                <label for="crimelocation" class="label-text">Location:</label>
+                <span id="crimelocation" class="textarea" role="textbox" contenteditable></span>
+            </td>
+
+
+            <td class="tdpaddingleft" colspan="3">
+                <label for="crimeperp" class="label-text">Possible Perp/Suspect</label>
+                <span id="crimeperp" class="textarea" role="textbox" contenteditable></span>
+            </td>
+
+        </tr>
+
+
+        <tr>
+
+            <td class="tdpaddingleft" colspan="3">
+                <label for="crimedesc" class="label-text">Description of Crime:</label>
+                <span id="crimedesc" class="textarea" role="textbox" contenteditable></span>
+            </td>
+
+
+            <td class="tdpaddingleft" colspan="3">
+                <label for="crimecanv" class="label-text">Locations / Results of Video Canvass:</label>
+                <span id="crimecanv" class="textarea" role="textbox" contenteditable></span>
+            </td>
+
+        </tr>
+
+
+    </table>
+    <!-- Index Crime Recap Permanent ends here -->
+
+    <!-- Index Crime Recap extra starts here -->
+    <!-- Template Code + Add Button -->
+    <form class="extracontainer">
+        <fieldset class="index_crimes">
+            <div class="repeatable">
+            </div>
+
+            <table class="buttonholder">
+                <tr>
+                <td colspan="6" class="tdright">
+                    <!-- Add Crime Button-->
+                    <input type="button" class="add" value="Add Crime">
+                    <!-- Add Crime Button -->
+                </td>
+                </tr>
+            </table>
+        </fieldset>
+    </form>
+    <!-- Index Crime Recap Extra -->
+    <script type="text/template" id="index_crimes">
+        <div class="field-group">
+                <table id="IndexCrimeRecap_Extra" class="indexcrimerecap_perma">
+                    <tr>
+                        <td class="tdleft" colspan="2">
+                            <label for="CrimeExtraCrimePicker" class="label-text">Crime Type:</label>
+                            <select name="SelectCrime" id="CrimeExtraCrimePicker" class="form-text">
+                                <option value="Select">Select</option>
+                                <option value="Murder">Murder</option>
+                                <option value="Rape">Rape</option>
+                                <option value="Robbery">Robbery</option>
+                                <option value="Felony Assault">Felony Assault</option>
+                                <option value="Burglary">Burglary</option>
+                                <option value="Grand Larceny">Grand Larceny</option>
+                                <option value="GLA">GLA</option>
+                            </select>
+                        </td>
+
+                        <td class="tdleft" colspan="2">
+                            <label for="occtime" class="label-text">Occurrence Time:</label>
+                            <input id="occtime" type="time" class="form-text">
+                        </td>
+
+                        <td class="tdright" colspan="2">
+                          <input id="crimeExtradvcheck" type="checkbox" class="form-text">
+                          <label for="crimeExtradvcheck" class="label-text">Domestic</label>
+
+                          <input id="crimeExtradvhischeck" type="checkbox" class="form-text">
+                          <label for="crimeExtradvhischeck" class="label-text">DV History</label>
+                        </td>
+                    </tr>
+
+
+                    <tr>
+
+                      <td class="tdpaddingleft" colspan="3">
+                        <label for="crimelocation" class="label-text">Location:</label>
+              					<span id="crimelocation" class="textarea" role="textbox" contenteditable></span>
+                      </td>
+
+
+                      <td class="tdpaddingleft" colspan="3">
+                        <label for="crimeperp" class="label-text">Possible Perp/Suspect</label>
+              					<span id="crimeperp" class="textarea" role="textbox" contenteditable></span>
+                      </td>
+
+                    </tr>
+
+
+                    <tr>
+
+                      <td class="tdpaddingleft" colspan="3">
+                        <label for="crimedesc" class="label-text">Description of Crime:</label>
+              					<span id="crimedesc" class="textarea" role="textbox" contenteditable></span>
+                      </td>
+
+
+                      <td class="tdpaddingleft" colspan="3">
+                        <label for="crimeperp" class="label-text">Locations / Results of Video Canvass:</label>
+              					<span id="crimeperp" class="textarea" role="textbox" contenteditable></span>
+                      </td>
+
+                    </tr>
+
+            <!-- Index Crime Recap Extra -->
+
+            <!-- Remove Crime Button -->
+
+                      <tr>
+                        <td colspan="6" class="buttonholder">
+                          <!-- Remove Crime Button-->
+                            <input type="button" class="delete" value="Remove Crime">
+                          <!-- Remove Crime Button -->
+                        </td>
+                      </tr>
+
+            <!-- Remove Crime Button -->
+              	</table>
+              </div>
+            </script>
+    <!-- Index Crime Recap Extra -->
+    <!-- Initialize Script -->
+    <script>
+        $(function() {
+            $(".index_crimes .repeatable").repeatable({
+                addTrigger: ".index_crimes .add",
+                deleteTrigger: ".index_crimes .delete",
+                template: "#index_crimes",
+                startWith: 1,
+                max: null
+            });
+        });
+    </script>
+    <!-- Initialize Script -->
+    <!-- Index Crime Recap extra ends here -->
+
+    <!-- Index Crime Recap -->
+
+<!-- Section -->
+
+
+<!-- Print/Save Buttons  -->
+
+    <table class="bottombuttonsholder">
+      <tr class="topaligntr">
+        <td class="tdmiddle">
+
+            <input type="button" id="printbutton" class="print" value="1. Save as PDF" onclick="window.print()">
+
+        </td>
+        <td class="tdmiddle">
+            <input type="button" id="emailbutton" class="email" value="2. Send Email" onclick="mailto('', '', '');event.preventDefault()">
+        </td>
+      </tr>
+
+      <tr class="topaligntr">
+        <td class="tdmiddle">
+            <label class="print-text">(Select "Save As PDF" or "Microsoft Print to PDF" as the printer)</label>
+        </td>
+
+        <td class="tdmiddle">
+            <label class="email-text">(Attach the PDF file you just saved)</label>
+        </td>
+      </tr>
+
+      <tr class="topaligntr">
+        <td class="tdmiddle" colspan="2">
+          <p class="easteregg">CDT Shawon</p>
+        </td>
+      </tr>
+
+    </table>
+
+<!-- Print/Save Buttons  -->
+
+<!-- Made by Shawon -->
+
+
+</body>
+</html>
