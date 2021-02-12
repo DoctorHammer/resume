@@ -23,10 +23,10 @@ body, html {
 
 <!-- /* Header */ -->
 
-.topnamediv { 100%;
+.topnamediv {
   width: 100%;
       border-collapse: collapse;
-      border: 0px solid black;
+      border: 0px 0px solid red;
       padding-top: 0px;
       padding-bottom: 0px;
       line-height: 0px;
@@ -36,10 +36,10 @@ body, html {
 
 }
 
-.topnameinput { 100%;
+.topnameinput {
   width: 100%;
       border-collapse: collapse;
-      border: 0px solid black;
+      border: 0px 0px solid red;
       padding-top: 0px;
       padding-bottom: 0px;
       line-height: 0px;
